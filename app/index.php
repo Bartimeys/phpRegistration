@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!--    <link rel="manifest" href="site.webmanifest">-->
-    <link rel="apple-touch-icon" href="dev/img/assets/logo-loveknitting-sm.svg">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="#">
+  <link rel="shortcut icon" href="#" type="image/x-icon"/>
 
   <!--build:css assets/css/styles.min.css-->
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -19,7 +19,7 @@
 </head>
 <body>
 
-test
+<?php include('includes/content.php') ?>
 
 <!--build:js assets/js/vendor.min.js -->
 <script src="../node_modules/jquery/dist/jquery.min.js"></script>
