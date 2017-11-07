@@ -1,7 +1,7 @@
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form form-login">
+<form id="registration" name="registration" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="form form-login">
     <div class="form-field">
         <label class="email" for="email">Email</label>
-        <input id="login-email" type="email" class="form-input" name="email" required>
+        <input id="email" type="email" class="form-input" name="email" required>
     </div>
     <div class="form-field">
         <label class="birthday" for="birthday">Birthday</label>
@@ -10,11 +10,11 @@
 
     <div class="form-field">
         <label class="lock" for="login-password">Password</label>
-        <input id="login-password" type="password" class="form-input" name="password" required>
+        <input id="password" type="password" class="form-input" name="password" required>
     </div>
     <div class="form-field">
         <label class="lock" for="login-password">Confirm Password</label>
-        <input id="login-password" type="password" class="form-input" name="password2" required>
+        <input id="password_again" type="password" class="form-input" name="password_again" required>
     </div>
 
     <div class="form-field">
