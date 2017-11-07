@@ -1,0 +1,153 @@
+$white:#ffffff;
+$dark-gray:#57585a;
+$gray:#d9d9d9;
+$light-gray:#eeeeee;
+$green:#0ca49a;
+$dark-gray2:#3A3F44;
+$dark-green:#197071;
+
+
+
+/**/
+
+$middle-width:320px;
+
+.image-style{
+  width: 40%;
+}
+html {
+  height: 100%;
+}
+
+body {
+  /* Remember to use the other versions for IE 10 and older browsers! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: 'lato', sans-serif;
+  color: $dark-gray;
+  background: $light-gray;
+}
+
+.row {
+  background: $white;
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 40px;
+  text-align: center;
+  padding: 20px 20px 0;
+  margin: 0;
+}
+
+.login-item {
+  color: $dark-gray;
+  padding: 25px 25px 0;
+  margin: 20px 20px 0;
+  border-radius: 3px;
+}
+
+input {
+  border: 1px solid $gray;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  -webkit-transition: background-color .3s;
+  transition: background-color .3s;
+}
+
+
+.form input {
+  &[type="password"], &[type="text"], &[type="date"], &[type="email"]{
+    width: $middle-width;
+  }
+}
+
+.form-login {
+  label {
+    padding: 1rem;
+    color: $dark-gray2;
+    width: 100px;
+  }
+  input {
+    &[type="text"], &[type="password"], &[type="submit"], &[type="date"], &[type="email"] {
+      padding: 10px;
+      margin-top: 5px;
+      color: $dark-gray2;
+    }
+  }
+  input {
+    &[type="text"], &[type="password"] {
+      background-color: $white;
+    }
+    &[type="text"] {
+      &:focus, &:hover {
+        background-color: $light-gray;
+      }
+    }
+    &[type="password"] {
+      &:focus, &:hover {
+        background-color: $light-gray;
+      }
+    }
+    &[type="submit"] {
+      background-color: $green;
+      color: #eee;
+      font-weight: bold;
+      &:focus, &:hover {
+        background-color: $dark-green;
+      }
+    }
+  }
+}
+
+.form-field {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.text--center {
+  text-align: center;
+}
+@media (max-width: 960px) {
+  .form-field {
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  input {
+    &[type="text"], &[type="password"], &[type="submit"], &[type="date"], &[type="email"] {
+      width: $middle-width;
+      color: $dark-gray2;
+    }
+  }
+  div.login-item > form > div > label {
+    padding: 0;
+  }
+  div.logo > picture > img{
+    width: 20%;
+  }
+  .row {
+    width: 100vw;}
+}
