@@ -23,7 +23,7 @@
                 $password = $_POST["password"];
                 $password_again = $_POST["password_again"];
                 ?>
-                <h3>Welcome <?php echo($email) ?></h3>
+                <?php include('template/welcome.php') ?>
 
 
                 <?php

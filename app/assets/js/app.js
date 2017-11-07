@@ -1,5 +1,7 @@
 // Wait for the DOM to be ready
 $(function() {
+    var $loading = $('.spinner').hide();
+    var $btn = $('#submit').show();
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
     $("#registration").validate({
@@ -44,7 +46,9 @@ $(function() {
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid
         submitHandler: function(form) {
-            form.submit();
+            form.submit(
+                setTimeout($loading.show(),$btn.hide(), 8000)
+            );
         }
     });
     $.validator.addMethod("date", function(value, element) {
