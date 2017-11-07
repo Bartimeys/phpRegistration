@@ -8,7 +8,6 @@ $(function() {
             // The key name on the left side is the name attribute
             // of an input field. Validation rules are defined
             // on the right side
-            birthday: "required",
             email: {
                 required: true,
                 // Specify that email should be validated
@@ -21,6 +20,13 @@ $(function() {
             },
             password_again: {
                 equalTo: "#password"
+            },
+            birthday:{
+
+                required: true,
+
+                date: true
+
             }
         },
         // Specify validation error messages
@@ -39,6 +45,13 @@ $(function() {
         // in the "action" attribute of the form when valid
         submitHandler: function(form) {
             form.submit();
+        }
+    });
+    $.validator.addMethod("date", function(value, element) {
+        var myDate = new Date(value);
+        var today = $.now();
+        if (myDate<today) {
+            return true;
         }
     });
 });
