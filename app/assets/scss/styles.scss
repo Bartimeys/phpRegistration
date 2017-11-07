@@ -5,23 +5,28 @@ $light-gray:#eeeeee;
 $green:#0ca49a;
 $dark-gray2:#3A3F44;
 $dark-green:#197071;
+$gray-h1:#5d5e60;
+
 
 
 
 /**/
 
 $middle-width:320px;
-$max-width:550px;
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+$max-width:80%;
+img.image-style {
+  padding: 10px;
+}
 
 .login-page {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
-.float-right{
-      float: right;
-  }
+
+.float-right {
+  float: right;
+}
 
 .form {
   position: relative;
@@ -32,6 +37,9 @@ $max-width:550px;
   margin: 0 auto 100px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  .form-field {
+    padding: 5px 0;
+  }
   input {
     font-family: "Roboto", sans-serif;
     outline: 0;
@@ -41,14 +49,14 @@ $max-width:550px;
     padding: 5px;
     box-sizing: border-box;
     font-size: 14px;
-  }
-  input[type="submit"]{
-    width: 5em;
-    background: $green;
-    color: $white;
-    font-weight: bold;
-    font-size: large;
-    padding: 5px;
+    &[type="submit"] {
+      width: 5em;
+      background: $green;
+      color: $white;
+      font-weight: bold;
+      font-size: large;
+      padding: 5px;
+    }
   }
   button {
     font-family: "Roboto", sans-serif;
@@ -60,8 +68,6 @@ $max-width:550px;
     padding: 15px;
     color: $white;
     font-size: 14px;
-    //-webkit-transition: all 0.3 ease;
-    //transition: all 0.3 ease;
     cursor: pointer;
     &:hover, &:active, &:focus {
       background: $green;
@@ -91,48 +97,52 @@ $max-width:550px;
     display: block;
     clear: both;
   }
-  .info {
-    margin: 50px auto;
-    text-align: center;
-    h1 {
-      margin: 0 0 15px;
-      padding: 0;
-      font-size: 36px;
-      font-weight: 300;
-      color: $dark-gray2;
-    }
-    span {
-      color: $dark-gray2;
-      font-size: 12px;
-      a {
-        color: $dark-gray2;
-        text-decoration: none;
-      }
-      .fa {
-        color: #EF3B3A;
-      }
-    }
-  }
 }
 
 body {
   background: $light-gray;
-  font-family: "Roboto", sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+label {
+  &#email-error, &#birthday-error, &#password-error, &#password_again-error {
+    width: 100%;
+    padding: 0 0 10px 0;
+    color: crimson;
+  }
+}
+
 @media (min-width: 1023px) {
-  .form input {
-    width: 200px;
+  .form {
+    input {
+      width: 200px;
+    }
+    label {
+      width: 140px;
+      float: left;
+    }
   }
-  .form label{
-    width: 140px;
-    float: left;
-  }
-  .container{
-    max-width: 80%;
+  .container {
+    max-width: $max-width;
   }
   img.image-style {
-    width: 50%;
+    width: 94%;
   }
+  div.logo > h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+}
+
+div.logo > h1 {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  color: $gray-h1;
+  line-height: 65px;
+  padding: 0;
+  margin: 0;
+}

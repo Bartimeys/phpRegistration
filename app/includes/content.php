@@ -6,7 +6,7 @@
                 <source style="width: 40%;" media="(min-width: 1024px)" srcset="../assets/images/logo-loveknitting.svg">
                 <img class="image-style" src="../assets/images/logo-loveknitting.svg" alt="love crafts">
             </picture>
-            Registration exercise
+            <b>Registration exercise</b>
         </h1></div>
     <div class="row">
 
