@@ -1,7 +1,8 @@
 // Wait for the DOM to be ready
 $(function() {
     var $loading = $('.spinner').hide();
-    var $btn = $('#submit').show();
+    var $btn = $(':submit');
+
     // Initialize form validation on the registration form.
     // It has the name attribute "registration"
     $("#registration").validate({
@@ -21,19 +22,21 @@ $(function() {
                 minlength: 5
             },
             password_again: {
-                equalTo: "#password"
+                equalTo: "#password",
+                required: true,
+                minlength: 5
             },
             birthday:{
-
                 required: true,
-
-                date: true
-
+                futureDate: true
             }
         },
         // Specify validation error messages
         messages: {
-            birthday: "Please enter your birthday",
+            birthday: {
+                date: "Please enter a valid date",
+                futureDate: "Birthday can't be in future"
+            },
             password: {
                 required: "Please provide a password",
                 minlength: "Your password must be at least 5 characters long"
@@ -46,15 +49,29 @@ $(function() {
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid
         submitHandler: function(form) {
-            form.submit(
-                setTimeout($loading.show(),$btn.hide(), 16000)
-            );
+            $loading.show();
+            $btn.hide();
+
+            setTimeout(function(){
+                $.post('/api/ajaxHandler.php', $(form).serialize(), function(response){
+                    if (response){
+                        alert(response.message);
+                    }
+
+                    $loading.hide();
+                    $btn.show();
+                    form.reset();
+                });
+            }, 2000);
+
+            return false;
         }
     });
-    $.validator.addMethod("date", function(value, element) {
+
+    $.validator.addMethod("futureDate", function(value, element) {
         var myDate = new Date(value);
         var today = $.now();
-        if (myDate<today) {
+        if (myDate < today) {
             return true;
         }
     });
