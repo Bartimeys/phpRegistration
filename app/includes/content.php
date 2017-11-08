@@ -3,7 +3,7 @@
         <h1><picture>
                 <source style="width: 20%" media="(max-width: 1023px)" srcset="../assets/images/logo-loveknitting-sm.svg">
                 <source style="width: 40%;" media="(min-width: 1024px)" srcset="../assets/images/logo-loveknitting.svg">
-                <img class="image-style" src="../assets/images/logo-loveknitting.svg" alt="love crafts">
+                <img class="image-style" src="../assets/images/logo-loveknitting.svg" alt="Love Knilling">
             </picture>
             <b>Registration exercise</b>
         </h1></div>

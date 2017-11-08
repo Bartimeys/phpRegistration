@@ -1,4 +1,11 @@
 @mixin display($display) {
   display: $display;
+}
 
+@mixin width($elem) {
+  width: $elem;
+
+}
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
 }

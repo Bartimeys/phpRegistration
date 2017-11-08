@@ -16,7 +16,7 @@
         <label class="lock" for="password_again">Confirm Password</label>
         <input id="password_again" type="password" class="form-input" name="password_again"/>
     </div>
-    <img class="spinner" src="../../assets/images/spinner.svg"/>
+    <img class="spinner" src="../../assets/images/spinner.svg" alt="Spinner"/>
     <div class="form-field">
         <input type="submit" id="submit" value="Register">
     </div>

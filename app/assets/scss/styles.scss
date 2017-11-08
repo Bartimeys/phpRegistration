@@ -1,20 +1,14 @@
-$white: #ffffff;
-$dark-gray: #57585a;
-$gray: #d9d9d9;
-$light-gray: #eeeeee;
-$green: #0ca49a;
-$dark-gray2: #3A3F44;
-$dark-green: #197071;
-$gray-h1: #5d5e60;
+@import "mixins/variables.scss";
+@import "mixins/mixin.scss";
 
-/**/
-
-$middle-width: 320px;
-$max-width: 80%;
 img.image-style {
   padding: 10px;
 }
 
+.padding-margin-0{
+  padding: 0;
+  margin: 0;
+}
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -30,7 +24,7 @@ img.image-style {
   text-align: left;
   z-index: 1;
   background: $white;
-  width: auto;
+  @include width(auto);
   margin: 0 auto 100px;
   padding: 45px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -41,13 +35,13 @@ img.image-style {
     font-family: "Roboto", sans-serif;
     outline: 0;
     border: 1px solid $gray;
-    width: 100%;
+    @include width(100%);
     margin: 0 0 15px;
     padding: 5px;
     box-sizing: border-box;
     font-size: 14px;
     &[type="submit"] {
-      width: 5em;
+      @include width(5em);
       background: $green;
       color: $white;
       font-weight: bold;
@@ -60,7 +54,7 @@ img.image-style {
     text-transform: uppercase;
     outline: 0;
     background: $light-gray;
-    width: 100%;
+    @include width(100%);
     border: 0;
     padding: 15px;
     color: $white;
@@ -80,18 +74,20 @@ img.image-style {
     }
   }
   .register-form {
-    display: none;
+    @include display(none);
+
   }
 }
 
 .container {
   position: relative;
   z-index: 1;
-  max-width: $max-width;
+  @include width($max-width);
+  //max-width: $max-width;
   margin: 0 auto;
   &:before, &:after {
     content: "";
-    display: block;
+    @include display(block);
     clear: both;
   }
 }
@@ -105,7 +101,7 @@ body {
 
 label {
   &#email-error, &#birthday-error, &#password-error, &#password_again-error {
-    width: 100%;
+    @include width(100%);
     padding: 0 0 10px 0;
     color: crimson;
   }
@@ -114,10 +110,10 @@ label {
 @media (min-width: 1024px) {
   .form {
     input {
-      width: 200px;
+      @include width(200px);
     }
     label {
-      width: 140px;
+      @include width(140px);
       float: left;
     }
   }
@@ -125,10 +121,10 @@ label {
     max-width: $max-width;
   }
   img.image-style {
-    width: 200px;
+    @include width(200px);
   }
   div.logo > h1 {
-    display: flex;
+    @include display(flex);
     align-items: center;
     justify-content: center;
   }
@@ -136,15 +132,14 @@ label {
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
   img.image-style {
-    width: 90%;
+    @include width(90%);
   }
 }
 div.logo > h1 {
-  display: flex;
+  @include display(flex);
   align-items: center;
   justify-content: left;
   color: $gray-h1;
   line-height: 65px;
-  padding: 0;
-  margin: 0;
+  @extend .padding-margin-0;
 }
